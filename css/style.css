@@ -1,0 +1,10 @@
+body {
+    text-align: center;
+    background-color:#EBDAAE;
+}
+
+.board img {
+    width: 50%;
+    height: auto;
+    max-width: 500px;
+}
