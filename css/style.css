@@ -24,12 +24,11 @@ body {
 div#board table {
     margin: 0 auto;
     position: relative;
-    bottom: 491px;
-    left: 2px;
+    bottom: 492px;
 }
 
 div#board td {
     background: #000000;
-    height: 3.07rem;
-    width: 3.07rem;
+    height: 3.04rem;
+    width: 3.04rem;
 }
