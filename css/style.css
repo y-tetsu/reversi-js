@@ -4,7 +4,32 @@ body {
 }
 
 .board img {
-    width: 50%;
-    height: auto;
-    max-width: 500px;
+    /*width: 90%;*/
+    /*height: auto;*/
+    max-width: 509px;
+}
+
+.black_disc img {
+    /*width: 7.0%;*/
+    /*height: auto;*/
+    max-width: 38px;
+}
+
+.white_disc img {
+    /*width: 7.0%;*/
+    /*height: auto;*/
+    max-width: 38px;
+}
+
+div#board table {
+    margin: 0 auto;
+    position: relative;
+    bottom: 491px;
+    left: 2px;
+}
+
+div#board td {
+    background: #000000;
+    height: 3.07rem;
+    width: 3.07rem;
 }
