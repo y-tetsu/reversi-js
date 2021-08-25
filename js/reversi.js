@@ -1,4 +1,19 @@
+////////////////////////////////////////////////////
+// 合わせこみ
+const shrinkLimit1 = 609
+const shrinkLimit2 = 467
+const bottomA = 4/(shrinkLimit2 - shrinkLimit1)
+const bottomB = shrinkLimit1 * bottomA * -1
+const widthA = 1.35/(shrinkLimit2 - shrinkLimit1)
+const widthB = shrinkLimit1 * widthA * -1
+const frameW = 53.5
+const bottomValue = 528
+////////////////////////////////////////////////////
+
+
 const boardTable = document.createElement('table');
+boardTable.style.position = 'relative';
+
 document.getElementById('board').appendChild(boardTable);
 for (let i = 0; i < 8; i++) {
     const boardCol = document.createElement('tr');
@@ -11,8 +26,53 @@ for (let i = 0; i < 8; i++) {
     }
 }
 
+
+//サイズ調整
+resizeWindow();  // ダミーでコール(後で見直し)
+let clientWidth = document.body.clientWidth
+let adjust1 = 1;
+let adjust2 = 0;
+let adjust3 = 0;
+if (clientWidth <= shrinkLimit1) {
+    adjust1 = shrinkLimit1 / clientWidth;
+    adjust2 = bottomA * clientWidth + bottomB
+    adjust3 = widthA * clientWidth + widthB
+}
+
+boardTable.style.bottom = bottomValue/adjust1 + adjust2 + 'px';
+
+for (let i = 0; i < 64; i++) {
+    document.getElementById(i).setAttribute('width', frameW/adjust1 - adjust3);
+    document.getElementById(i).setAttribute('height', frameW/adjust1 - adjust3);
+}
+
+
+// マス目クリック時
 function onClick() {
     const idx = Number(this.getAttribute('id'));
     alert(idx)
+    alert(document.body.clientWidth)
 }
 
+
+// ブラウザリサイズ時
+function resizeWindow(){
+    let clientWidth = document.body.clientWidth
+    let adjust1 = 1;
+    let adjust2 = 0;
+    let adjust3 = 0;
+    if (clientWidth <= shrinkLimit1) {
+        adjust1 = shrinkLimit1 / clientWidth;
+        adjust2 = bottomA * clientWidth + bottomB
+        adjust3 = widthA * clientWidth + widthB
+    }
+
+    boardTable.style.bottom = bottomValue/adjust1 + adjust2 + 'px';
+
+    for (let i = 0; i < 64; i++) {
+        document.getElementById(i).setAttribute('width', frameW/adjust1 - adjust3);
+        document.getElementById(i).setAttribute('height', frameW/adjust1 - adjust3);
+    }
+}
+
+window.onresize = resizeWindow;
