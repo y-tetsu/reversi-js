@@ -1,2 +1,2 @@
 # reversi-js
-JavaScriptで作るリバーシ
+https://y-tetsu.github.io/reversi-js/
