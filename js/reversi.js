@@ -1,13 +1,18 @@
 ////////////////////////////////////////////////////
 // 合わせこみ
-const shrinkLimit1 = 609;
+/*const shrinkLimit1 = 609;*/
+const shrinkLimit1 = 829;
+/*const shrinkLimit2 = 467;*/
 const shrinkLimit2 = 467;
-const bottomA = 4/(shrinkLimit2 - shrinkLimit1);
+/*const bottomA = 4/(shrinkLimit2 - shrinkLimit1);*/
+const bottomA = 8/(shrinkLimit2 - shrinkLimit1);
 const bottomB = shrinkLimit1 * bottomA * -1;
 const widthA = 1.35/(shrinkLimit2 - shrinkLimit1);
 const widthB = shrinkLimit1 * widthA * -1;
-const frameW = 53.5;
-const bottomValue = 528;
+//const frameW = 53.5;
+const frameW = 73.5;
+/*const bottomValue = 528;*/
+const bottomValue = 710;
 const discOffset = 100;
 const blank = 0;
 const black = 1;
