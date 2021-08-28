@@ -20,6 +20,6 @@ div#board td {
 
 .disc {
     position: absolute;
-    bottom: 3px;
-    right: 2px;
+    bottom: 6px;
+    right: 4px;
 }
