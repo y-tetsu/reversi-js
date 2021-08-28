@@ -12,7 +12,6 @@ const bottomValue = 528
 
 
 const boardTable = document.createElement('table');
-boardTable.style.position = 'relative';
 
 document.getElementById('board').appendChild(boardTable);
 for (let i = 0; i < 8; i++) {
@@ -22,7 +21,15 @@ for (let i = 0; i < 8; i++) {
         const boardCell = document.createElement('td');
         boardCol.appendChild(boardCell);
         boardCell.addEventListener('click', onClick);
-        boardCell.setAttribute('id', 8* i + j);
+        boardCell.setAttribute('id', 8*i + j);
+        boardCell.setAttribute('class', 'disc');
+
+        var img = document.createElement('img');
+        img.src = './image/black.png';
+        img.setAttribute('width',  '82.0%');
+        img.setAttribute('height',  'auto');
+        img.setAttribute('class',  'disc');
+        boardCell.appendChild(img);
     }
 }
 
